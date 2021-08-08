@@ -1,8 +1,6 @@
-package ru.netology.repository;
+package ru.netology.domain;
 
-//import ru.netology.repository.Product;
-
-import java.util.Arrays;
+import ru.netology.domain.Product;
 
 public class Repository {
     private Product[] items = new Product[0];
@@ -15,19 +13,6 @@ public class Repository {
         tmp[lastIndex] = item;
         items = tmp;
     }
-
-   /* @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Repository that = (Repository) o;
-        return Arrays.equals(items, that.items);
-    }
-
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(items);
-    }*/
 
     public Product[] findAll() {
         return items;

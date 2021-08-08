@@ -1,4 +1,4 @@
-package ru.netology.repository;
+package ru.netology.domain;
 
 import java.util.Objects;
 
@@ -18,7 +18,7 @@ public class Smartphone extends Product {
         return manufacturer;
     }
 
-   /* public void setManufacturer(String manufacturer) {
+    public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
@@ -34,5 +34,5 @@ public class Smartphone extends Product {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), manufacturer);
-    }*/
+    }
 }

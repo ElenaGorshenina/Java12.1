@@ -1,4 +1,4 @@
-package ru.netology.repository;
+package ru.netology.domain;
 
 import java.util.Objects;
 
@@ -20,7 +20,7 @@ public class Product {
         return id;
     }
 
-    /*public void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -60,6 +60,6 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price);
-    }*/
+    }
 
 }

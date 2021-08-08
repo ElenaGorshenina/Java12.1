@@ -1,4 +1,4 @@
-package ru.netology.repository;
+package ru.netology.domain;
 
 import java.util.Objects;
 
@@ -18,7 +18,7 @@ public class Book extends Product {
         return author;
     }
 
-    /*public void setAuthor(String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -34,5 +34,5 @@ public class Book extends Product {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), author);
-    }*/
+    }
 }

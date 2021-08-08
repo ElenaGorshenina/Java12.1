@@ -1,9 +1,9 @@
 package ru.netology.manager;
 
-import ru.netology.repository.Book;
-import ru.netology.repository.Repository;
-import ru.netology.repository.Product;
-import ru.netology.repository.Smartphone;
+import ru.netology.domain.Book;
+import ru.netology.domain.Repository;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
 
 public class Manager {
     private Repository repository;
@@ -33,14 +33,14 @@ public class Manager {
     public boolean matches(Product product, String search) {
         if (product instanceof Book) { // если в параметре product лежит объект класса Book
             Book book = (Book) product; // положем его в переменную типа Book чтобы пользоваться методами класса Book
-            if (((Book) product).getAuthor().contains(search)) { // проверим есть ли поисковое слово в данных об авторе
+            if (product.getName().contains(search) || book.getAuthor().contains(search)) { // проверим есть ли поисковое слово в данных об авторе
                 return true;
             }
             return false;
         }
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
-            if (((Smartphone) product).getManufacturer().contains(search)) {
+            if (product.getName().contains(search) || smartphone.getManufacturer().contains(search)) {
                 return true;
             }
             return false;

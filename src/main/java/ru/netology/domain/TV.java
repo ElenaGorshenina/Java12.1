@@ -1,4 +1,4 @@
-package ru.netology.repository;
+package ru.netology.domain;
 
 public class TV extends Product {
     private String manufacturer;
