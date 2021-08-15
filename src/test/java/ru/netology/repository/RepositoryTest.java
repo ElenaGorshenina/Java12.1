@@ -35,30 +35,28 @@ class RepositoryTest {
     }
 
     @Test
-    public void removeByIdTest(){
+    public void removeByIdTest() {
         Product[] actual = repository.removeById(11);
-        Product[] expected = new Product[] {dubrovskiy,galaxyA12, galaxyA21s, redmi9};
+        Product[] expected = new Product[]{dubrovskiy, galaxyA12, galaxyA21s, redmi9};
         assertArrayEquals(expected, actual);
     }
 
     @Test
     public void findByIdTest() {
-        Product[] actual = repository.findById(12);
-        Product[] expected = new Product[]{dubrovskiy};
-        assertArrayEquals(expected, actual);
+        Product actual = repository.findById(12);
+        assertEquals(dubrovskiy, actual);
     }
 
     @Test
     public void notFoundFindByIdTest() {
-        Product[] actual = repository.findById(5);
-        Product[] expected = new Product[]{null};
-        assertArrayEquals(expected, actual);
+        Product actual = repository.findById(5);
+        assertEquals(null, actual);
     }
 
-//    @Test
-//    public void shouldThrowNotFoundIdException() {
-//        assertThrows(NotFoundIdException.class, () -> {
-//            repository.removeById(5);
-//        });
-//    }
+    @Test
+    public void shouldThrowNotFoundIdException() {
+        assertThrows(NotFoundIdException.class, () -> {
+            repository.removeById(5);
+        });
+    }
 }
